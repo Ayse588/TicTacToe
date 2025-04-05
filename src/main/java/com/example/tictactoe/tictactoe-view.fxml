@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:controller="com.example.tictactoe.TicTacToeController"
+          xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          alignment="center"
+          hgap="5" vgap="5">
+    <Button fx:id="button00" onAction="#handleButtonClick" GridPane.rowIndex="0" GridPane.columnIndex="0" minWidth="80" minHeight="80"/>
+    <Button fx:id="button01" onAction="#handleButtonClick" GridPane.rowIndex="0" GridPane.columnIndex="1" minWidth="80" minHeight="80"/>
+    <Button fx:id="button02" onAction="#handleButtonClick" GridPane.rowIndex="0" GridPane.columnIndex="2" minWidth="80" minHeight="80"/>
+
+    <Button fx:id="button10" onAction="#handleButtonClick" GridPane.rowIndex="1" GridPane.columnIndex="0" minWidth="80" minHeight="80"/>
+    <Button fx:id="button11" onAction="#handleButtonClick" GridPane.rowIndex="1" GridPane.columnIndex="1" minWidth="80" minHeight="80"/>
+    <Button fx:id="button12" onAction="#handleButtonClick" GridPane.rowIndex="1" GridPane.columnIndex="2" minWidth="80" minHeight="80"/>
+
+    <Button fx:id="button20" onAction="#handleButtonClick" GridPane.rowIndex="2" GridPane.columnIndex="0" minWidth="80" minHeight="80"/>
+    <Button fx:id="button21" onAction="#handleButtonClick" GridPane.rowIndex="2" GridPane.columnIndex="1" minWidth="80" minHeight="80"/>
+    <Button fx:id="button22" onAction="#handleButtonClick" GridPane.rowIndex="2" GridPane.columnIndex="2" minWidth="80" minHeight="80"/>
+
+    <Label fx:id="statusLabel" text="Spiel starten!" GridPane.rowIndex="3" GridPane.columnSpan="3" />
+</GridPane>
