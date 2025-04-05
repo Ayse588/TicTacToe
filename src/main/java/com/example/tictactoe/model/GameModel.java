@@ -37,12 +37,6 @@ public class GameModel {
     // OOX // reihe 1
     // X X // reihe 2
 
-    // OOO
-    // XXX
-
-    // X
-    // X
-    // X
 
     // XXX
     // OXO
