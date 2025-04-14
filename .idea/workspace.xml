@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68514dde-0a0f-4feb-bd6b-00d19dc58562" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/util/ConfigLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Main.java" afterDir="false" />
     </list>

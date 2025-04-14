@@ -1,4 +1,4 @@
-package org.example.game;
+package com.example.tictactoe;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
