@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68514dde-0a0f-4feb-bd6b-00d19dc58562" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/util/ConfigLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/HelloController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/tictactoe.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,25 +45,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/aysetoy/Desktop/Fh Technikum/3. Semester/ODE/TicTacToe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.28045976&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Client.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Server.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/aysetoy/Desktop/Fh Technikum/3. Semester/ODE/TicTacToe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.28045976",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager" selected="Application.Server">
+    <configuration name="Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.tictactoe.Main" />
+      <module name="TicTacToe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.tictactoe.Main" />
+      <module name="TicTacToe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Server" />
+    </list>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,5 +102,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Downloads/GameState-2.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

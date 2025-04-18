@@ -213,7 +213,7 @@ public class NetworkConnection {
         sendMessage(NetworkCommand.RESET.toString());
     }
 
-    public void SendQuitAndClose() {
+    public void sendQuitAndClose() {
         if (running) {
             sendMessage(NetworkCommand.QUIT.toString());
             closeConnection(false);

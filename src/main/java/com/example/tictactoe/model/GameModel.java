@@ -77,10 +77,10 @@ public class GameModel {
             if (board[0][j] == player && board[1][j] == player && board[2][j] == player) return true;
         }
 
-        if (board[0][0] == player && board[1][1] == player && board[2][2] == player) return true;
+        if (board[0][0] == player && board[1][1] == player && board[2][2] == player) return true; //überprüft beide Diagonalen
         if (board[0][2] == player && board[1][1] == player && board[2][0] == player) return true;
 
-        return false;
+        return false; //wenn keine Bedingung erfüllt ist - hat der Spieler nicht gewonnen
     }
 
     // XXO // reihe 0
@@ -89,7 +89,7 @@ public class GameModel {
 
     private boolean isBoardFull() {
         for (int i = 0; i < BOARD_SIZE; i++) {
-            for (int j = 0; i < BOARD_SIZE; j++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
                 if (board[i][j] == Player.EMPTY) {
                     return false;
                 }
@@ -98,7 +98,7 @@ public class GameModel {
         return true;
     }
 
-    public synchronized Player[][] getBoard() {
+    public synchronized Player[][] getBoard() {   // Gibt eine Kopie des Spielfelds zurück, damit es von außen nicht versehentlich verändert wird
         Player[][] boardCopy = new Player[BOARD_SIZE][BOARD_SIZE];
         for (int i = 0; i < BOARD_SIZE; i++) {
             boardCopy[i] = Arrays.copyOf(this.board[i], BOARD_SIZE);
@@ -118,4 +118,7 @@ public class GameModel {
         return BOARD_SIZE;
     }
 
+    public GameState getGameState() {
+        return gameState;
+    }
 }
