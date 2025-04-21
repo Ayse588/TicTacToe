@@ -11,6 +11,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * This class handles the network connection for the Tic Tac Toe game.
+ * It allows for both server and client functionality, enabling two players to connect and play against each other.
+ * The class uses sockets to establish a connection and communicate between the players.
+ * It also provides methods to send and receive messages, including moves, resets, and quit commands.
+ */
+
 public class NetworkConnection {
     private final NetworkListener listener;
     private Socket socket;
@@ -22,7 +29,13 @@ public class NetworkConnection {
     private final int port;
     private Player localPlayer = null;
 
-//    new NetworkConnection(..., "127.0.1.0", 54321);
+    /**
+     * Constructor for the NetworkConnection class.
+     *
+     * @param listener   the listener to handle network events
+     * @param opponentIp the IP address of the opponent
+     * @param port       the port number to connect to
+     */
 
     public NetworkConnection(NetworkListener listener, String opponentIp, int port) {
         if (listener == null) {
@@ -32,6 +45,11 @@ public class NetworkConnection {
         this.opponentIp = opponentIp;
         this.port = port;
     }
+
+    /**
+     * Starts the server to listen for incoming connections.
+     * If the server is already running, an error message is sent to the listener.
+     */
 
     public void startServer() {
         if (running) {
@@ -64,6 +82,11 @@ public class NetworkConnection {
             }
         }, "tictactoe_server_thread").start();
     }
+
+    /**
+     * Starts the client to connect to the server.
+     * If the client is already running, an error message is sent to the listener.
+     */
 
     public void startClient() {
         if (running) {
@@ -100,22 +123,22 @@ public class NetworkConnection {
         }, "tictactoe_client_thread").start();
     }
 
+    /**
+     * Sets up the input and output streams for communication.
+     *
+     * @throws IOException if an I/O error occurs
+     */
+
     private void setupStreams() throws IOException {
         out = new PrintWriter(socket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         System.out.println("input/output streams created");
     }
 
-    // client
-
-    // a
-    // b
-    // c
-    // \0
-
-    // abc
-
-    // server
+    /**
+     * Starts the listener thread to read messages from the server.
+     * The thread runs in a loop, reading messages and processing them.
+     */
 
     private void startListening() {
         listenerThread = new Thread(() -> {
@@ -142,8 +165,13 @@ public class NetworkConnection {
         listenerThread.start();
     }
 
-    // 15 2 10
-    // 2:1
+    /**
+     * Processes the received message and performs the corresponding action.
+     *
+     * @param message the message to process
+     *
+     */
+
 
     private void processMessage(String message) {
         try {
@@ -193,6 +221,12 @@ public class NetworkConnection {
             Platform.runLater(() -> listener.onError("error parsing message " + e.getMessage()));
         }
     }
+    /**
+     * Sends a message to the opponent.
+     *
+     * @param message the message to send
+     * @return true if the message was sent successfully, false otherwise
+     */
 
     public synchronized boolean sendMessage(String message) {
         if (out != null && !socket.isClosed()) {
@@ -219,6 +253,12 @@ public class NetworkConnection {
             closeConnection(false);
         }
     }
+
+    /**
+     * Closes the connection and cleans up resources.
+     *
+     * @param notifyOpponent whether to notify the opponent about the disconnection
+     */
 
     public synchronized void closeConnection(boolean notifyOpponent) {
         if (!running) {

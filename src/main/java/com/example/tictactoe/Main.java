@@ -19,11 +19,6 @@ public class Main extends Application {
             String path = "/com/example/tictactoe/tictactoe.fxml";
             URL fxml = getClass().getResource(path);
 
-//            if (fxml == null) {
-//                System.out.println("fxml file not found");
-//                System.exit(1);
-//            }
-
             Parent root = FXMLLoader.load(fxml);
 
             Scene scene = new Scene(root);

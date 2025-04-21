@@ -26,9 +26,5 @@ public class ConfigLoader {
         }
         return properties;
     }
-//
-//    private ConfigLoader() {
-//        throw new IllegalStateException("this class should not be initialized");
-//    }
 
 }

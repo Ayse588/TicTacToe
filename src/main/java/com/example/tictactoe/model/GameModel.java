@@ -2,54 +2,74 @@ package com.example.tictactoe.model;
 
 import java.util.Arrays;
 
-//Konstante für die Spielfeldgröße (3x3 Felder)
-public class GameModel {
-    private static final int BOARD_SIZE = 3;  //final=unveränderlich
-    private Player[][] board;  //2D-Array (3x3) vom Typ Player. Enthält für jedes Feld den aktuellen Zustand: X, O oder leer.
-    private Player currentPlayer; //Speichert, welcher Spieler aktuell am Zug ist.
-    private GameState gameState; //Speichert den aktuellen Spielstatus (läuft noch, X gewinnt, O gewinnt, Unentschieden).
+/*
+    * This class represents the game model for a Tic Tac Toe game.
+    * It manages the game board, the current player, and the game state.
+    * The game board is represented as a 2D array of Player objects (X, O, or EMPTY).
+    * The current player is either Player.X or Player.O.
+    * The game state can be PLAYING, X_WINS, O_WINS, or DRAW.
+    *
+    */
 
+
+public class GameModel {
+    private static final int BOARD_SIZE = 3;
+    private Player[][] board;
+    private Player currentPlayer;
+    private GameState gameState;
+
+
+    /*
+        * This constructor initializes the game board and sets the starting player to Player.X.
+        * It also sets the game state to PLAYING.
+        * The board is a 2D array of Player objects, initialized to EMPTY.
+     */
 
     public GameModel() {
         this.board = new Player[BOARD_SIZE][BOARD_SIZE];
-        resetGame(); //Ruft resetGame() auf, um alle Felder auf leer zu setzen und das Spiel vorzubereiten.
+        resetGame();
     }
 
+    /*
+        * This constructor initializes the game board and sets the starting player.
+        * It also sets the game state to PLAYING.
+        * The starting player must be either Player.X or Player.O.
+        * If an invalid player is provided, an IllegalArgumentException is thrown.
+     */
+
     public GameModel(Player startingPlayer) {
-        this(); //Erzeugt erst das leere Spielfeld und ruft resetGame()
+        this();
         if (startingPlayer == Player.X || startingPlayer == Player.O) {
             this.currentPlayer = startingPlayer;
         } else {
             throw new IllegalArgumentException("Invalid starting player");
         }
-        this.gameState = GameState.PLAYING; //Das Spiel beginnt im Zustand PLAYING.
+        this.gameState = GameState.PLAYING;
     }
 
-    public synchronized void resetGame() {  //Durchläuft alle Zeilen (i) und setzt jedes Feld in der Zeile mit Player.EMPTY.
+    public synchronized void resetGame() {
         for (int i = 0; i < BOARD_SIZE; i++) {
             Arrays.fill(board[i], Player.EMPTY);
         }
-        currentPlayer = Player.X; //Setzt Spieler X als Startspieler.
-        gameState = GameState.PLAYING; //Setzt den Spielstatus zurück auf "läuft noch".
+        currentPlayer = Player.X;
+        gameState = GameState.PLAYING;
     }
 
-    // XXO // reihe 0
-    // OOX // reihe 1
-    // X X // reihe 2
+    /*
+     * This method is synchronized to ensure that only one thread can access it at a time.
+     * It checks if the move is valid (within bounds and on an empty cell) and updates the board.
+     * If the move is valid, it updates the game state and switches the current player.
+     */
 
 
-    // XXX
-    // OXO
-    // OOX
-
-    public synchronized boolean makeMove(int row, int col) {  //Methode zum Ausführen eines Spielzugs an Position (row, col).
+    public synchronized boolean makeMove(int row, int col) {
         if (row < 0 || row >= BOARD_SIZE || col < 0 || col >= BOARD_SIZE) {
-            throw new IllegalArgumentException("wrong coordinates");  //Prüft, ob die Koordinaten im gültigen Bereich liegen (0 bis 2).
+            throw new IllegalArgumentException("wrong coordinates");
         }
 
-        if (board[row][col] == Player.EMPTY && gameState == GameState.PLAYING) { //Nur möglich, wenn das Feld leer ist und das Spiel noch läuft.
-            board[row][col] = currentPlayer; //Setzt den aktuellen Spieler auf das Feld.
-            updateGameState(); //Prüft danach, ob jemand gewonnen hat oder das Spiel vorbei ist.
+        if (board[row][col] == Player.EMPTY && gameState == GameState.PLAYING) {
+            board[row][col] = currentPlayer;
+            updateGameState();
             if (gameState == GameState.PLAYING) {
                 currentPlayer = currentPlayer.opponent();
             }
@@ -57,6 +77,11 @@ public class GameModel {
         }
         return false;
     }
+
+    /*
+        * This method checks the current game state to determine if there is a winner or if the game is a draw.
+        * It checks all possible winning combinations (rows, columns, diagonals) for the current player.
+     */
 
     private void updateGameState() {
         if (checkWin(currentPlayer) == true) {
@@ -67,6 +92,11 @@ public class GameModel {
             gameState = GameState.PLAYING;
         }
     }
+
+    /*
+        * This method checks if the current player has won the game by checking all possible winning combinations.
+        * It returns true if the player has won, false otherwise.
+     */
 
     private boolean checkWin(Player player) {
         for (int i = 0; i < BOARD_SIZE; i++) {
@@ -83,9 +113,11 @@ public class GameModel {
         return false; //wenn keine Bedingung erfüllt ist - hat der Spieler nicht gewonnen
     }
 
-    // XXO // reihe 0
-    // OOX // reihe 1
-    // XOX // reihe 2
+
+    /*
+        * This method checks if the board is full (i.e., there are no empty cells left).
+        * It returns true if the board is full, false otherwise.
+     */
 
     private boolean isBoardFull() {
         for (int i = 0; i < BOARD_SIZE; i++) {
@@ -97,6 +129,13 @@ public class GameModel {
         }
         return true;
     }
+
+    /*
+        * This method returns a copy of the current game board.
+        * It is synchronized to ensure thread safety when accessing the board.
+        * The returned board is a 2D array of Player objects representing the current state of the game.
+        * This allows external code to access the board without modifying it directly.
+     */
 
     public synchronized Player[][] getBoard() {   // Gibt eine Kopie des Spielfelds zurück, damit es von außen nicht versehentlich verändert wird
         Player[][] boardCopy = new Player[BOARD_SIZE][BOARD_SIZE];

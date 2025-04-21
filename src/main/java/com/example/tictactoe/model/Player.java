@@ -1,5 +1,13 @@
 package com.example.tictactoe.model;
 
+/*
+    * This enum represents the two players in the game: X and O.
+    * It also includes an EMPTY state to represent an empty cell on the board.
+    * Each player is represented by a string symbol.
+    *
+    */
+
+
 public enum Player {
     X("X"),
     O("O"),
@@ -7,20 +15,16 @@ public enum Player {
 
     private final String symbol; //Speichert das Symbol
 
- // Konstruktor: Speichert das übergebene Symbol.
+
     private Player(String symbol) {
         this.symbol = symbol;
     }
 
-    // Player test = new Player("X");
-    // System.out.println(test.toString()); // "X"
-
-    //Gibt "X", "O" oder " " zurück – gut für Ausgabe im UI
     @Override
     public String toString() {
         return symbol;
     }
-//Gibt den Gegenspieler zurück (von X → O, von O → X, Empty bleibt Empty
+
     public Player opponent() {
         if (this == X) {
             return O;

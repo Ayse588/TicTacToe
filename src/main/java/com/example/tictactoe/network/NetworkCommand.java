@@ -1,5 +1,12 @@
 package com.example.tictactoe.network;
 
+/*
+    * This enum represents the different commands that can be sent over the network.
+    * Each command is represented by a string value.
+    * The enum provides a method to convert a string to the corresponding command.
+    *
+ */
+
 public enum NetworkCommand {
     MOVE("MOVE"),
     RESET("RESET"),
@@ -10,7 +17,6 @@ public enum NetworkCommand {
 
     private final String command;
 
-//    new NetworkCommand();
 
     NetworkCommand(String command) {
         this.command = command;
@@ -21,9 +27,12 @@ public enum NetworkCommand {
         return command;
     }
 
-    // test = lowercase
-    // TEST = uppercase
-    //
+    /**
+     * Converts a string to the corresponding NetworkCommand enum value.
+     *
+     * @param text the string to convert
+     * @return the corresponding NetworkCommand enum value, or null if no match is found
+     */
 
 
     public static NetworkCommand fromString(String text) {
@@ -36,7 +45,3 @@ public enum NetworkCommand {
     }
 
 }
-
-// XOX
-// XOX
-// OO

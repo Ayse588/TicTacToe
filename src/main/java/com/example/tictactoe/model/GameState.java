@@ -1,23 +1,29 @@
 package com.example.tictactoe.model;
 
-public enum GameState {         //ein spezieller Datentyp, der eine feste Auswahl von Werten beschreibt
+/*
+    * This enum represents the different states of the game.
+    * It includes states for when the game is still playing, when player X or O wins, and when the game ends in a draw.
+    * Each state is represented by a string message.
+    *
+    */
+
+
+public enum GameState {
     PLAYING("Playing"),
     X_WINS("Player X wins!"),
     O_WINS("Player O wins!"),
     DRAW("It's a draw!");
 
-    private final String message; //message speichert die Nachricht zum jeweiligen Zustand.
+    private final String message;
 
-    private GameState(String message) { //Konstruktor für jeden GameState. Übergibt und speichert die passende Nachricht.
+    private GameState(String message) {
         this.message = message;
     }
 
-    //Gibt die Nachricht für den jeweiligen Zustand zurück.
     public String getMessage() {
         return message;
     }
 
-    //Gibt zurück, ob das Spiel vorbei ist (also nicht mehr PLAYING)
     public boolean isGameOver() {
         return this != PLAYING;
     }
