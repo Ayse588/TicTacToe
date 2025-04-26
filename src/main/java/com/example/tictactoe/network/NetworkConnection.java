@@ -148,7 +148,7 @@ public class NetworkConnection {
                     System.out.println("received message: " + messageFromServer);
                     processMessage(messageFromServer);
                 }
-            } catch (IOException e) {
+            } catch (IOException e) { // Bei Interrupt wird catch Block ausgeführt
                 if (running) {
                     System.err.println("network read error: " + e.getMessage());
                     Platform.runLater(() -> listener.onError("connection lost: " + e.getMessage()));
@@ -239,6 +239,12 @@ public class NetworkConnection {
         }
     }
 
+    /**
+     * Sends a move to the opponent.
+     *
+     * @param row the row of the move
+     * @param col the column of the move
+     */
     public void sendMove(int row, int col) {
         sendMessage(NetworkCommand.MOVE + ":" + row + ":" + col);
     }
@@ -273,9 +279,8 @@ public class NetworkConnection {
         }
 
         if (listenerThread != null) {
-            listenerThread.interrupt();
+            listenerThread.interrupt(); // damit wird Interrupted IO Exception innerhalb vom listenerThread geworfen - Subklasse der IOException
         }
-
         try {
             if (out != null) {
                 out.close();

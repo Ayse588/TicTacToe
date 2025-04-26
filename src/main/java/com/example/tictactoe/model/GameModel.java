@@ -47,6 +47,12 @@ public class GameModel {
         this.gameState = GameState.PLAYING;
     }
 
+    /*
+        * This method resets the game board to its initial state.
+        * It sets all cells to EMPTY and sets the current player to Player.X.
+        * The game state is also set to PLAYING.
+     */
+
     public synchronized void resetGame() {
         for (int i = 0; i < BOARD_SIZE; i++) {
             Arrays.fill(board[i], Player.EMPTY);

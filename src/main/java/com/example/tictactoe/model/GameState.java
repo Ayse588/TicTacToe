@@ -16,7 +16,7 @@ public enum GameState {
 
     private final String message;
 
-    private GameState(String message) {
+    GameState(String message) {
         this.message = message;
     }
 

@@ -16,7 +16,7 @@ public enum Player {
     private final String symbol; //Speichert das Symbol
 
 
-    private Player(String symbol) {
+    Player(String symbol) {
         this.symbol = symbol;
     }
 

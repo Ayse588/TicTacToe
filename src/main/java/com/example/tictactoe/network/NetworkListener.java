@@ -7,7 +7,7 @@ public interface NetworkListener {
 
     void onResetReceived();
 
-    void onConnectionChanged(boolean connected, Player assignedPlayer);
+    void onConnectionChanged(boolean connected, Player assignedPlayer); // assignedPlayer zeigt an, ob der Spieler z. X oder O zugewiesen bekommen hat
 
     void onError(String message);
 
