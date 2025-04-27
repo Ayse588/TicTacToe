@@ -2,7 +2,7 @@ package com.example.tictactoe.model;
 
 import java.util.Arrays;
 
-/*
+/**
     * This class represents the game model for a Tic Tac Toe game.
     * It manages the game board, the current player, and the game state.
     * The game board is represented as a 2D array of Player objects (X, O, or EMPTY).
@@ -19,7 +19,7 @@ public class GameModel {
     private GameState gameState;
 
 
-    /*
+    /**
         * This constructor initializes the game board and sets the starting player to Player.X.
         * It also sets the game state to PLAYING.
         * The board is a 2D array of Player objects, initialized to EMPTY.
@@ -30,7 +30,7 @@ public class GameModel {
         resetGame();
     }
 
-    /*
+    /**
         * This constructor initializes the game board and sets the starting player.
         * It also sets the game state to PLAYING.
         * The starting player must be either Player.X or Player.O.
@@ -47,7 +47,7 @@ public class GameModel {
         this.gameState = GameState.PLAYING;
     }
 
-    /*
+    /**
         * This method resets the game board to its initial state.
         * It sets all cells to EMPTY and sets the current player to Player.X.
         * The game state is also set to PLAYING.
@@ -61,7 +61,7 @@ public class GameModel {
         gameState = GameState.PLAYING;
     }
 
-    /*
+    /**
      * This method is synchronized to ensure that only one thread can access it at a time.
      * It checks if the move is valid (within bounds and on an empty cell) and updates the board.
      * If the move is valid, it updates the game state and switches the current player.
@@ -84,7 +84,7 @@ public class GameModel {
         return false;
     }
 
-    /*
+    /**
         * This method checks the current game state to determine if there is a winner or if the game is a draw.
         * It checks all possible winning combinations (rows, columns, diagonals) for the current player.
      */
@@ -99,7 +99,7 @@ public class GameModel {
         }
     }
 
-    /*
+    /**
         * This method checks if the current player has won the game by checking all possible winning combinations.
         * It returns true if the player has won, false otherwise.
      */
@@ -120,7 +120,7 @@ public class GameModel {
     }
 
 
-    /*
+    /**
         * This method checks if the board is full (i.e., there are no empty cells left).
         * It returns true if the board is full, false otherwise.
      */
@@ -136,7 +136,7 @@ public class GameModel {
         return true;
     }
 
-    /*
+    /**
         * This method returns a copy of the current game board.
         * It is synchronized to ensure thread safety when accessing the board.
         * The returned board is a 2D array of Player objects representing the current state of the game.

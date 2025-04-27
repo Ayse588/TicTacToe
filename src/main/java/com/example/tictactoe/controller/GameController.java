@@ -16,7 +16,7 @@ import javafx.scene.text.Font;
 
 import java.util.Properties;
 
-/*
+/**
  * This class is the controller for the Tic Tac Toe game.
  * It handles the game logic, UI updates, and network communication.
  * It implements the NetworkListener interface to handle network events.
@@ -46,9 +46,6 @@ public class GameController implements NetworkListener {
     private String opponentIP;
     private int networkPort;
 
-    // OXO
-    // X O
-    //  XX
 
     @FXML
     public void initialize() {
@@ -76,7 +73,7 @@ public class GameController implements NetworkListener {
 
     }
 
-    /*
+    /**
         * This method loads the configuration from the config file.
         * It sets the opponent IP and network port based on the loaded properties.
         * If the properties are not found, it uses default values.
@@ -93,7 +90,7 @@ public class GameController implements NetworkListener {
         }
         System.out.println("configuration loaded successfully: " + opponentIP + ":" + networkPort);
     }
-    /*
+    /**
         * This method creates the buttons for the game board.
         * It sets the properties of each button and adds them to the grid pane.
         * It also sets the action handler for each button.
@@ -124,7 +121,7 @@ public class GameController implements NetworkListener {
         System.out.println("board buttons loaded successfully");
     }
 
-    /*
+    /**
         * This method handles the click event on the game board buttons.
         * It checks if the move is valid and updates the game model accordingly.
         * It also updates the UI and sends the move over the network if applicable.
@@ -190,7 +187,7 @@ public class GameController implements NetworkListener {
         }
     }
 
-    /*
+    /**
         * This method updates the status label based on the current game state.
         * It checks if the game is over and updates the label accordingly.
         * It also handles the case where a network game is active.
@@ -216,7 +213,7 @@ public class GameController implements NetworkListener {
         statusLabel.setText(statusText);
     }
 
-    /*
+    /**
         * This method enables or disables the game board buttons based on the given parameter.
         * It iterates through all buttons and sets their disable property accordingly.
      */
@@ -242,7 +239,7 @@ public class GameController implements NetworkListener {
         System.exit(0);
     }
 
-    /*
+    /**
         * This method is called when the host button is clicked.
         * It starts a server and waits for an opponent to connect.
         * It also handles the case where a network connection is already active.
@@ -269,7 +266,7 @@ public class GameController implements NetworkListener {
         enableDisableBoard(false);
     }
 
-    /*
+    /**
         * This method is called when the join button is clicked.
         * It attempts to connect to a host and starts a client.
         * It also handles the case where a network connection is already active.
@@ -296,7 +293,7 @@ public class GameController implements NetworkListener {
         enableDisableBoard(false);
     }
 
-    /*
+    /**
         * This method is called when the new game button is clicked.
         * It resets the game and updates the UI accordingly.
         * It also handles the case where a network connection is active.
@@ -324,7 +321,7 @@ public class GameController implements NetworkListener {
         cleanupAndExit();
     }
 
-    /*
+    /**
         * This method resets the game model and updates the UI accordingly.
         * It also handles the case where the reset is initiated over the network.
      */
@@ -352,7 +349,7 @@ public class GameController implements NetworkListener {
         }
         updateStatusLabel();
     }
-    /*
+    /**
         * This method updates the UI board based on the current state of the game model.
         * It sets the text and style of each button according to the player occupying that cell.
         * It also handles the case where a cell is empty.
@@ -391,7 +388,7 @@ public class GameController implements NetworkListener {
         alert.showAndWait();
     }
 
-    /*
+    /**
         * This method is called when a move is received from the opponent.
         * It updates the game model and the UI accordingly.
         * It checks if the move is valid and updates the game state.
@@ -426,7 +423,7 @@ public class GameController implements NetworkListener {
         }
     }
 
-    /*
+    /**
         * This method is called when a reset request is received from the opponent.
         * It resets the game model and updates the UI accordingly.
         * It also handles the case where a network connection is active.
@@ -446,7 +443,7 @@ public class GameController implements NetworkListener {
         updateStatusLabel();
     }
 
-    /*
+    /**
         * This method is called when the connection status changes.
         * It updates the UI and the game state accordingly.
         * It also handles the case where a network connection is active.
@@ -479,7 +476,7 @@ public class GameController implements NetworkListener {
         }
     }
 
-    /*
+    /**
         * This method is called when an error occurs during the network connection.
         * It updates the UI and the game state accordingly.
         * It also handles the case where a network connection is active.
@@ -504,7 +501,7 @@ public class GameController implements NetworkListener {
         }
     }
 
-    /*
+    /**
         * This method is called when the opponent quits the game.
         * It updates the UI and the game state accordingly.
         * It also handles the case where a network connection is active.
