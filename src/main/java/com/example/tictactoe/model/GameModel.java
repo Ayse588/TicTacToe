@@ -12,11 +12,10 @@ import java.util.Arrays;
     */
 
 
-public class GameModel {
+public class GameModel extends AbstractGameModel {
     private static final int BOARD_SIZE = 3;
     private Player[][] board;
     private Player currentPlayer;
-    private GameState gameState;
 
 
     /**
@@ -52,7 +51,7 @@ public class GameModel {
         * It sets all cells to EMPTY and sets the current player to Player.X.
         * The game state is also set to PLAYING.
      */
-
+    @Override
     public synchronized void resetGame() {
         for (int i = 0; i < BOARD_SIZE; i++) {
             Arrays.fill(board[i], Player.EMPTY);
@@ -161,9 +160,5 @@ public class GameModel {
 
     public static int getBoardSize() {
         return BOARD_SIZE;
-    }
-
-    public GameState getGameState() {
-        return gameState;
     }
 }
