@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68514dde-0a0f-4feb-bd6b-00d19dc58562" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/AbstractGameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/AbstractGameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/AbstractGameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/network/NetworkCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/util/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/util/ConfigLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

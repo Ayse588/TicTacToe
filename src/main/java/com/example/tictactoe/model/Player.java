@@ -1,6 +1,6 @@
 package com.example.tictactoe.model;
 
-/*
+/**
     * This enum represents the two players in the game: X and O.
     * It also includes an EMPTY state to represent an empty cell on the board.
     * Each player is represented by a string symbol.

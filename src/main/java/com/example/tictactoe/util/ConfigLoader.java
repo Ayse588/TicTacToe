@@ -6,6 +6,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+
+/**
+ * This class is responsible for loading configuration properties from a file.
+ * It provides methods to load the properties from a default file or a specified file.
+ * The loaded properties can be used throughout the application for configuration purposes.
+ *
+ */
+
 public class ConfigLoader {
     private static final String CONFIG_FILE = "config.properties";
 

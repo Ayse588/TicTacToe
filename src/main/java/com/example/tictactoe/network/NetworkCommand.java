@@ -1,6 +1,6 @@
 package com.example.tictactoe.network;
 
-/*
+/**
     * This enum represents the different commands that can be sent over the network.
     * Each command is represented by a string value.
     * The enum provides a method to convert a string to the corresponding command.
