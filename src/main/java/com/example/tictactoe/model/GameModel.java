@@ -3,13 +3,13 @@ package com.example.tictactoe.model;
 import java.util.Arrays;
 
 /**
-    * This class represents the game model for a Tic Tac Toe game.
-    * It manages the game board, the current player, and the game state.
-    * The game board is represented as a 2D array of Player objects (X, O, or EMPTY).
-    * The current player is either Player.X or Player.O.
-    * The game state can be PLAYING, X_WINS, O_WINS, or DRAW.
-    *
-    */
+ * This class represents the game model for a Tic Tac Toe game.
+ * It extends the AbstractGameModel class and implements the game logic.
+ * The game board is represented as a 2D array of Player objects.
+ * The current player is tracked, and the game state is updated based on player moves.
+ * The class provides methods to reset the game, make moves, check for wins, and get the current state of the board.
+ *
+ */
 
 
 public class GameModel extends AbstractGameModel {
