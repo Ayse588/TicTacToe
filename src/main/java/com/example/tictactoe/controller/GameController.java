@@ -280,7 +280,7 @@ public class GameController implements NetworkListener {
             return;
         }
 
-        resetGameInternal(false);
+        resetGameInternal(false); // kein Reset durch den Gegner, setzt Spiel intern weiter
         statusLabel.setText("attempting to connect to host " + opponentIP + ":" + networkPort);
         isNetworkGame = true;
         localPlayer = Player.O;

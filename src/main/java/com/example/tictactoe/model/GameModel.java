@@ -51,6 +51,7 @@ public class GameModel extends AbstractGameModel {
         * It sets all cells to EMPTY and sets the current player to Player.X.
         * The game state is also set to PLAYING.
      */
+
     @Override
     public synchronized void resetGame() {
         for (int i = 0; i < BOARD_SIZE; i++) {
